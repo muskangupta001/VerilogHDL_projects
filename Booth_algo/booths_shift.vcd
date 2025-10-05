@@ -1,5 +1,5 @@
 $date
-	Sat Oct  4 21:07:55 2025
+	Sun Oct  5 07:05:09 2025
 $end
 $version
 	Icarus Verilog
@@ -9,87 +9,148 @@ $timescale
 $end
 $scope module tb_booths_algo $end
 $var wire 8 ! out [7:0] $end
-$var reg 1 " clk $end
-$var reg 4 # md [3:0] $end
-$var reg 4 $ mr_in [3:0] $end
-$var reg 1 % rst $end
+$var parameter 32 " N $end
+$var parameter 32 # Tclk $end
+$var reg 1 $ clk $end
+$var reg 4 % md [3:0] $end
+$var reg 4 & mr_in [3:0] $end
+$var reg 1 ' rst $end
 $scope module uut $end
-$var wire 1 " clk $end
-$var wire 4 & md [3:0] $end
-$var wire 4 ' mr_in [3:0] $end
-$var wire 1 % rst $end
-$var reg 4 ( accu [3:0] $end
-$var reg 4 ) arth [3:0] $end
-$var reg 3 * count [2:0] $end
-$var reg 4 + inv_md [3:0] $end
-$var reg 4 , mr [3:0] $end
-$var reg 8 - out [7:0] $end
-$var reg 1 . q1 $end
+$var wire 1 $ clk $end
+$var wire 4 ( md [3:0] $end
+$var wire 4 ) mr_in [3:0] $end
+$var wire 1 ' rst $end
+$var parameter 32 * N $end
+$var reg 4 + accu [3:0] $end
+$var reg 4 , arth [3:0] $end
+$var reg 3 - count [2:0] $end
+$var reg 4 . inv_md [3:0] $end
+$var reg 4 / mr [3:0] $end
+$var reg 8 0 out [7:0] $end
+$var reg 1 1 q1 $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 $comment Show the parameter values. $end
 $dumpall
+b100 *
+b1010 #
+b100 "
 $end
 #0
 $dumpvars
-0.
-b0 -
-b111 ,
-b1011 +
-b100 *
-bx )
-b0 (
-b111 '
-b101 &
-1%
-b111 $
-b101 #
-0"
+01
+b0 0
+b111 /
+b1011 .
+b100 -
+bx ,
+b0 +
+b111 )
+b101 (
+1'
+b111 &
+b101 %
+0$
 b0 !
 $end
 #5000
-1"
+1$
 #10000
-0"
-0%
+0$
+0'
 #15000
-b11 *
-b1101 (
+b11 -
+b1101 +
+b1011 /
+11
 b1011 ,
-1.
-b1011 )
-1"
+1$
 #20000
-0"
+0$
 #25000
-b10 *
-b1110 (
+b10 -
+b1110 +
+b1101 /
 b1101 ,
-b1101 )
-1"
+1$
 #30000
-0"
+0$
 #35000
-b1 *
-b1111 (
-b110 ,
-b1110 )
-1"
+b1 -
+b1111 +
+b110 /
+b1110 ,
+1$
 #40000
-0"
+0$
 #45000
 b100011 !
-b100011 -
-b0 *
-b10 (
-b11 ,
-0.
-b100 )
-1"
+b100011 0
+b0 -
+b10 +
+b11 /
+01
+b100 ,
+1$
 #50000
-0"
+0$
 #55000
-1"
+1$
 #60000
-0"
+b0 !
+b0 0
+b100 -
+b101 .
+b0 +
+0$
+b1011 %
+b1011 (
+b11 &
+b11 )
+1'
+#65000
+1$
+#70000
+0$
+0'
+#75000
+b11 -
+b10 +
+b1001 /
+11
+b101 ,
+1$
+#80000
+0$
+#85000
+b10 -
+b1 +
+b100 /
+b10 ,
+1$
+#90000
+0$
+#95000
+b1 -
+b1110 +
+b10 /
+01
+b1100 ,
+1$
+#100000
+0$
+#105000
+b11110001 !
+b11110001 0
+b0 -
+b1111 +
+b1 /
+b1110 ,
+1$
+#110000
+0$
+#115000
+1$
+#120000
+0$
