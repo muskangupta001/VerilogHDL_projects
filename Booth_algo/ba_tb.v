@@ -59,7 +59,7 @@ module tb_booths_algo;
         $finish;
     end
 
-    // Optional: print output at each positive edge
+    // print output at each positive edge
     always @(posedge clk) begin
         $display("Time=%0t | ACC=%b | MR=%b | OUT=%b", $time, uut.accu, uut.mr, out);
     end
