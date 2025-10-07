@@ -9,12 +9,12 @@ module nr_division #(
   output reg  [N-1:0] remainder // Remainder 
 );
 
-  reg [N-1:0] dd;               //Divident operation will be done on this
+  reg [N-1:0] dd;               //Divident operation will be done on this (quotient)
   reg [N-1:0] accu;             // Accumulator (partial remainder)
   reg [N-1:0] arth;             // Arithmetic result (temp)
   reg [$clog2(N+1)-1:0] cnt;    // Counter for N iterations
   reg [N-1:0] inv_dr;           // Two's complement of divisor
-  reg flg;                      // 0 → subtract, 1 → Addition
+  reg flg;                      // 0 -> subtract, 1 -> Addition
 
   always @(posedge clk or posedge rst) begin
     if (rst) begin
@@ -43,7 +43,7 @@ module nr_division #(
         accu = arth;
         dd = {dd[N-2:0], 1'b0};   //updating quotient
       end
-      else begin                 // Positive → then next step will be sub
+      else begin                 // Positive , then next step will be sub
         flg = 0;
         accu = arth;
         dd = {dd[N-2:0], 1'b1};   //updating quotient
