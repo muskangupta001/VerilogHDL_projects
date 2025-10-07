@@ -38,9 +38,10 @@ module tb_booths_algo;
         rst = 0;
         
         #(Tclk * (N + 1));              // Wait for N iterations
-
-         $display("Final Output => Time=%0t | Multiplier=%0d | Multiplicant=%0d | Output=%0d",
+         $display("-----------------------------------------------------");
+         $display("Test1 Output => Time=%0t | Multiplier=%0d | Multiplicant=%0d | Output=%0d",
          $time, $signed(mr_in), $signed(md), $signed(out));
+         $display("-----------------------------------------------------");
 
         
         // Test Case 2
@@ -51,9 +52,10 @@ module tb_booths_algo;
         rst = 0;
         
       #(Tclk * (N + 1));               // Wait for N iterations
-       
-      $display("Final Output => Time=%0t | Multiplier=%0d | Multiplicant=%0d | Output=%0d",
+      $display("-----------------------------------------------------"); 
+      $display("Test2 Output => Time=%0t | Multiplier=%0d | Multiplicant=%0d | Output=%0d",
          $time, $signed(mr_in), $signed(md), $signed(out));
+      $display("-----------------------------------------------------");
 
 
         $finish;
