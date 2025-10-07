@@ -3,7 +3,7 @@
 module tb_booths_algo;
 
     parameter N = 4;
-    parameter Tclk = 10; 
+    parameter Tclk = 10;  // time period 10ns
   
     reg clk;
     reg rst;
@@ -20,13 +20,13 @@ module tb_booths_algo;
         .out(out)
     );
 
-    // Clock generation: 10ns period
+    // Clock generation
     initial clk = 0;
     always #(Tclk/2) clk = ~clk;
 
     // Test sequence
     initial begin
-        // Dump waveform
+        
         $dumpfile("booths_shift.vcd");
         $dumpvars(0, tb_booths_algo);
 

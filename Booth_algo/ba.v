@@ -20,19 +20,21 @@ module booths_algo #(
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            mr     <= mr_in;           // Load multiplier
-            accu   <= {N{1'b0}};       // Clear accumulator
-            q1     <= 1'b0;            // Reset q1
-            inv_md <= ~md + 1;         // Compute 2's complement of md
-            count  <= N;               // Set iteration count
-            out    <= {2*N{1'b0}};     // Clear output
+            mr     = mr_in;           // Load multiplier
+            accu   = {N{1'b0}};       // Clear accumulator
+            q1     = 1'b0;            // Reset q1
+            inv_md = ~md + 1;         // Compute 2's complement of md
+            count  = N;               // Set iteration count
+            out    = {2*N{1'b0}};     // Clear output
         end 
         else if (count != 0) begin
             // Step 1: Booth’s Decision Logic
             if (mr[0] & ~q1)
                 arth = accu + inv_md;   // 0->1; Subtract multiplicand
+
             else if (~mr[0] & q1)
                 arth = accu + md;       // 1->0 ; Add multiplicand
+                
             else
                 arth = accu;            // no transition → No operation
 
