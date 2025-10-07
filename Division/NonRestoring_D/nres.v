@@ -18,14 +18,14 @@ module nr_division #(
 
   always @(posedge clk or posedge rst) begin
     if (rst) begin
-      accu      <= {N{1'b0}};
-      dd        <= dd_in;
-      arth      <= {N{1'b0}};
-      cnt       <= N;
-      quotient  <= {N{1'b0}};
-      remainder <= {N{1'b0}};
-      inv_dr    <= ~dr_in + 1;   // Two's complement (for subtraction)
-      flg       <= 0;
+      accu      = {N{1'b0}};
+      dd        = dd_in;
+      arth      = {N{1'b0}};
+      cnt       = N;
+      quotient  = {N{1'b0}};
+      remainder = {N{1'b0}};
+      inv_dr    = ~dr_in + 1;   // Two's complement (for subtraction)
+      flg       = 0;
     end
     else if (cnt != 0) begin
       // Step 1: Shift left {accu, dd}

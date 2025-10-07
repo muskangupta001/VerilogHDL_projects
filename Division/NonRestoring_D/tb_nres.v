@@ -32,7 +32,7 @@ module tb_nr_division;
     $dumpfile("nr_division.vcd");
     $dumpvars(0, tb_nr_division);
 
-    // Initialize inputs
+    // Test 1
     rst   = 1;
     dd_in = 4'b0111;   // Dividend = 7
     dr_in = 4'b0010;   // Divisor  = 2
@@ -42,18 +42,18 @@ module tb_nr_division;
     // Wait for division to complete
     #(Tclk * (N + 1));
 
-    // Display final result
+    // Display Test1 result
     $display("-----------------------------------------------------");
-    $display("Final Output => Time=%0t", $time);
+    $display("Test1 Output => Time=%0t", $time);
     $display("Dividend = %0d | Divisor = %0d | Quotient = %0d | Remainder = %0d",
              dd_in, dr_in,
              quotient,remainder);
     $display("-----------------------------------------------------");
 
-
+   // Test2
     rst   = 1;
-    dd_in = 4'b0011;   // Dividend = 7
-    dr_in = 4'b0101;   // Divisor  = 3
+    dd_in = 4'b0011;   // Dividend = 3
+    dr_in = 4'b0101;   // Divisor  = 5
     #Tclk;
     rst = 0;
 
@@ -62,7 +62,7 @@ module tb_nr_division;
 
     // Display final result
     $display("-----------------------------------------------------");
-    $display("Final Output => Time=%0t", $time);
+    $display("Test2 Output => Time=%0t", $time);
     $display("Dividend = %0d | Divisor = %0d | Quotient = %0d | Remainder = %0d",
              dd_in, dr_in,
              quotient,remainder);
@@ -71,7 +71,7 @@ module tb_nr_division;
     $finish;
   end
 
-  // Debug at every clock edge
+  // Debug at every positive clock edge
   always @(posedge clk) begin
     $display("Time=%0t | Accumulator=%b | Divident=%b | Cnt=%d",
              $time, uut.accu, uut.dd,uut.cnt);
